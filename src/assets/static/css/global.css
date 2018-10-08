@@ -40,6 +40,7 @@
     width: 100%;
     padding: 20px;
 }
+
 /*Website Footer */
 .footer-distributed{
 	background-color: #292c2f;
@@ -52,8 +53,9 @@
 	padding: 45px 50px;
 	margin-top: 80px;
 
-    position:absolute;
-    bottom:0;
+    position: absolute;
+	bottom:0;
+	
 }
 
 .footer-distributed .footer-left p{
@@ -61,8 +63,6 @@
 	font-size: 14px;
 	margin: 0;
 }
-
-/* Footer links */
 
 .footer-distributed p.footer-links{
 	font-size:18px;
@@ -98,9 +98,8 @@
 	line-height: 35px;
 
 	margin-left: 3px;
-}
 
-/* If you don't want the footer to be responsive, remove these media queries */
+}
 
 @media (max-width: 600px) {
 
@@ -119,14 +118,11 @@
 	}
 }
 
-
-
-/*main site*/
+/*Hauptseite*/
 
 .TitleMain {
-
 	font-size: 30px;
 	text-align: center;
 	font-weight: 500;
-
 }
+
