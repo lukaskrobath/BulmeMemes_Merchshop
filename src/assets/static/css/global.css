@@ -54,7 +54,6 @@
 
     position:absolute;
     bottom:0;
-    /*height:60px;  Height of the footer */
 }
 
 .footer-distributed .footer-left p{
@@ -118,4 +117,16 @@
 	.footer-distributed .footer-left p.footer-links{
 		line-height: 1.8;
 	}
+}
+
+
+
+/*main site*/
+
+.TitleMain {
+
+	font-size: 30px;
+	text-align: center;
+	font-weight: 500;
+
 }
