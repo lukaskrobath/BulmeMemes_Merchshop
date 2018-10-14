@@ -38,36 +38,27 @@
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
     width: 100%;
-    padding: 20px;
+    padding: 0px;
 }
 
 /*Website Footer */
 .footer{
-	background-color: #292c2f;
+	background-color: #333;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
+	position: fixed;
 	width: 100%;
 	text-align: left;
 	font: normal 16px sans-serif;
-
 	padding: 45px 50px;
 	margin-top: -5px;
+	bottom:0;
 
-	bottom:50;
 }
 
-.footer .footer-left p{
+.footer .footer-content p{
 	color:  #8f9296;
 	font-size: 14px;
 	margin: 0;
-}
-
-.footer p.footer-links{
-	font-size:18px;
-	font-weight: bold;
-	color:  #ffffff;
-	margin: 0 0 10px;
-	padding: 0;
 }
 
 .footer p.footer-links a{
@@ -77,66 +68,176 @@
 	color:  inherit;
 }
 
-.footer .footer-right{
-	float: right;
-	margin-top: 6px;
-	max-width: 180px;
-}
-
-.footer .footer-right a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	background-color:  #33383b;
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-left: 3px;
-
-}
-
-@media (max-width: 600px) {
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-right{
-		text-align: center;
-	}
-
-	.footer-distributed .footer-right{
-		float: none;
-		margin: 0 auto 20px;
-	}
-
-	.footer-distributed .footer-left p.footer-links{
-		line-height: 1.8;
-	}
-}
-
 /*Hauptseite*/
 
 .TitleMain {
-	font-size: 30px;
+	font-size: 35px;
+	font-weight: bolder;
 	text-align: center;
 	font-weight: 500;
 }
 
-.main {
 
-	position:relative;
-    margin:0;
-    padding:0;
-    overflow:auto;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color:#787878;
+  margin: 0;
 }
 
-.MerchOverview {
-	display: flex;
+button {
+  font-family: 'Hind Guntur', sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.025em;
+
+  background: #379aff;
+  padding: 18px 0 11px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  min-width: 120px;
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button span {
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+button:after,
+button:before {
+  padding: 18px 0 11px;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(-100% - 30px);
+  height: calc(100% - 29px);
+  width: calc(100% + 20px);
+  color: #fff;
+  border-radius: 2px;
+  transform: skew(-25deg);
+}
+
+button:after {
+  background: #fff;
+  transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+button:before {
+  background: #13c276;
+  z-index: 5;
+  transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+button:hover:after {
+  left: calc(0% - 10px);
+  transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+button:hover:before {
+  left: calc(0% - 10px);
+  transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+canvas {
+  width: 420px;
+  height: 420px;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+
+.glitch {
+  animation: glitch-skew 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s infinite;
+  font-family: orbitron, sans-serif;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transform-origin: center top;
+}
+.glitch__main {
+  color: #FFF;
+}
+.glitch__color {
+  height: 100%;
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  transform-origin: center center;
+  width: 100%;
+  z-index: -1;
+}
+.glitch__color--red {
+  animation: glitch 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  color: red;
+}
+.glitch__color--blue {
+  animation: glitch 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite reverse;
+  color: blue;
+}
+.glitch__color--green {
+  animation: glitch 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 100ms infinite;
+  color: #00FF0B;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
   }
-  
-  .column {
-	flex: 33.33%;
-	padding: 5px;
+  20% {
+    transform: translate(-8px, 8px);
   }
+  40% {
+    transform: translate(-8px, -8px);
+  }
+  60% {
+    transform: translate(8px, 8px);
+  }
+  80% {
+    transform: translate(8px, -8px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  48% {
+    transform: skew(0deg, 0deg);
+    filter: blur(0);
+  }
+  50% {
+    transform: skew(-20deg, 0deg);
+    filter: blur(4px);
+  }
+  52% {
+    transform: skew(20deg, 0deg);
+  }
+  54% {
+    transform: skew(0deg, 0deg);
+    filter: blur(0);
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+  }
+}

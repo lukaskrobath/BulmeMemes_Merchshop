@@ -23,6 +23,7 @@
     "express": "^4.16.3",
     "express-minify": "^1.0.0",
     "i18n": "^0.8.3",
+    "nodemon": "^1.18.4",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
