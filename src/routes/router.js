@@ -40,10 +40,6 @@ module.exports = function(app){
         });
     });
 
-    app.get("/robots.txt", (req, res) => {
-
-    });
-
     app.get("*", (req, res) => {
         let currentLocale = i18n.getLocale(req);
         res.render("errors/404", {
