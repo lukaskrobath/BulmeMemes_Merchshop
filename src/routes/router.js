@@ -40,6 +40,15 @@ module.exports = function(app){
         });
     });
 
+    app.get("/about", (req, res) => {
+        let currentLocale = i18n.getLocale(req);
+        res.render("about", {
+            "currentLanguage": currentLocale,
+            "routeTitle": "Über",
+            "route": req.path
+        });
+    });
+
     app.get("*", (req, res) => {
         let currentLocale = i18n.getLocale(req);
         res.render("errors/404", {
