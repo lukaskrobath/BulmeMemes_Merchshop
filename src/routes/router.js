@@ -49,6 +49,24 @@ module.exports = function(app){
         });
     });
 
+    app.get("/news", (req, res) => {
+        let currentLocale = i18n.getLocale(req);
+        res.render("news", {
+            "currentLanguage": currentLocale,
+            "routeTitle": "Über",
+            "route": req.path
+        });
+    });
+
+    app.get("/contact", (req, res) => {
+        let currentLocale = i18n.getLocale(req);
+        res.render("contact", {
+            "currentLanguage": currentLocale,
+            "routeTitle": "Über",
+            "route": req.path
+        });
+    });
+
     app.get("*", (req, res) => {
         let currentLocale = i18n.getLocale(req);
         res.render("errors/404", {
