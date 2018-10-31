@@ -48,7 +48,7 @@ module.exports = function(app){
             "route": req.path
         });
     });
-
+    
     app.get("/news", (req, res) => {
         let currentLocale = i18n.getLocale(req);
         res.render("news", {
