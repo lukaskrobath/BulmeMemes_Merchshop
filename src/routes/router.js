@@ -53,7 +53,7 @@ module.exports = function(app){
         let currentLocale = i18n.getLocale(req);
         res.render("news", {
             "currentLanguage": currentLocale,
-            "routeTitle": "Über",
+            "routeTitle": "News",
             "route": req.path
         });
     });
@@ -62,7 +62,16 @@ module.exports = function(app){
         let currentLocale = i18n.getLocale(req);
         res.render("contact", {
             "currentLanguage": currentLocale,
-            "routeTitle": "Über",
+            "routeTitle": "Kontakt",
+            "route": req.path
+        });
+    });
+
+    app.get("/merch", (req, res) => {
+        let currentLocale = i18n.getLocale(req);
+        res.render("merch", {
+            "currentLanguage": currentLocale,
+            "routeTitle": "Bulme_Memes MERCH",
             "route": req.path
         });
     });
