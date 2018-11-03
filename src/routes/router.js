@@ -48,33 +48,6 @@ module.exports = function(app){
             "route": req.path
         });
     });
-    
-    app.get("/news", (req, res) => {
-        let currentLocale = i18n.getLocale(req);
-        res.render("news", {
-            "currentLanguage": currentLocale,
-            "routeTitle": "News",
-            "route": req.path
-        });
-    });
-
-    app.get("/contact", (req, res) => {
-        let currentLocale = i18n.getLocale(req);
-        res.render("contact", {
-            "currentLanguage": currentLocale,
-            "routeTitle": "Kontakt",
-            "route": req.path
-        });
-    });
-
-    app.get("/merch", (req, res) => {
-        let currentLocale = i18n.getLocale(req);
-        res.render("merch", {
-            "currentLanguage": currentLocale,
-            "routeTitle": "Bulme_Memes MERCH",
-            "route": req.path
-        });
-    });
 
     app.get("*", (req, res) => {
         let currentLocale = i18n.getLocale(req);
